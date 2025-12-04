@@ -2,6 +2,14 @@
 
 Plataforma que conecta enfermeiros a pacientes de Home Care com segurança e transparência.
 
+Integrantes: 
+
+- Diogo Viana
+- Leonardo Dalton
+- Gustavo Thome
+- Nicolas Garcia
+- Matheus Pereira
+
 ## 🚀 Setup Rápido
 
 ### 1. Pré-requisitos
