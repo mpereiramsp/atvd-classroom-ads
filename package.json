@@ -1,0 +1,29 @@
+{
+  "name": "it-nursing-mvp",
+  "version": "1.0.0",
+  "description": "MVP com login/cadastro e API local",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "node src/backend/index.js",
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "tsx prisma/seed.ts",
+    "db:studio": "prisma studio",
+    "db:reset": "prisma migrate reset"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "prisma": "^5.22.0",
+    "tsx": "^4.21.0"
+  }
+}

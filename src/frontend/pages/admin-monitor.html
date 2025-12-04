@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IT.Nursing — Monitoramento Administrativo</title>
+  <link rel="stylesheet" href="/styles/styles.css"/>
+  <link rel="stylesheet" href="/styles/db.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="/assets/logo3.png" alt="Logo IT.Nursing" class="logo"/>
+      <div>
+        <strong>Central de Monitoramento</strong>
+        <small>Visão estratégica para o admin apresentar</small>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="/pages/index.html">Início</a>
+      <a href="/pages/admin-monitor.html">Admin</a>
+      <a href="/pages/enfermeiro-dashboard.html">Enfermeiro</a>
+      <a href="/pages/registrar-vaga.html">Nova vaga</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <div>
+        <h1 class="page-title">Painel de monitoramento</h1>
+        <p class="page-subtitle">Demonstre como o administrador acompanha métricas, alertas e auditorias.</p>
+      </div>
+      <div class="topbar-actions">
+        <a class="btn btn-primary" href="/pages/db.html">Resumo geral</a>
+      </div>
+    </section>
+
+    <section class="card-grid">
+      <article class="card">
+        <h3>Indicadores instantâneos</h3>
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat-value">42</span>
+            <span class="stat-label">Profissionais ativos</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">18</span>
+            <span class="stat-label">Vagas abertas</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">07</span>
+            <span class="stat-label">Alertas pendentes</span>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <h3>Alertas recentes</h3>
+        <ul class="simple-list">
+          <li><strong>Documento vencido:</strong> revisar COREN de Camila Ferreira.</li>
+          <li><strong>Fila de mensagens:</strong> 3 solicitações aguardando retorno.</li>
+          <li><strong>Auditoria:</strong> revisar logins suspeitos nas últimas 24h.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card section">
+      <h3 class="section-title">Mapa de operações</h3>
+      <p class="section-subtitle">Use a tabela para mostrar uma fotografia das cidades atendidas.</p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Cidade</th>
+            <th>Vagas ativas</th>
+            <th>Profissionais alocados</th>
+            <th>Nível de atenção</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>São Paulo - SP</td>
+            <td>08</td>
+            <td>21</td>
+            <td><span class="badge">Normal</span></td>
+          </tr>
+          <tr>
+            <td>Guarulhos - SP</td>
+            <td>05</td>
+            <td>12</td>
+            <td><span class="badge badge-warn">Monitorar</span></td>
+          </tr>
+          <tr>
+            <td>Campinas - SP</td>
+            <td>03</td>
+            <td>07</td>
+            <td><span class="badge badge-safe">Estável</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card section">
+      <div class="section-header">
+        <h3 class="section-title">Checklist de conformidade</h3>
+        <p class="section-subtitle">Explique cada item durante a apresentação.</p>
+      </div>
+      <div class="responsive-grid">
+        <article class="card">
+          <h4>Segurança</h4>
+          <ul class="simple-list">
+            <li>Logs de acesso revisados semanalmente.</li>
+            <li>Atualização de senhas administradores.</li>
+            <li>Backups simulados no MVP.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h4>Qualidade do atendimento</h4>
+          <ul class="simple-list">
+            <li>Trilhas de feedback dos enfermeiros.</li>
+            <li>Pesquisa de satisfação dos pacientes.</li>
+            <li>Auditoria de documentos.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+  <script src="/scripts/chatbot.js"></script>
+</body>
+</html>
+

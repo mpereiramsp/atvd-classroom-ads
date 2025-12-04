@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IT.Nursing — Registrar nova vaga</title>
+  <link rel="stylesheet" href="/styles/styles.css"/>
+  <link rel="stylesheet" href="/styles/vagas.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="/assets/logo3.png" alt="Logo IT.Nursing" class="logo"/>
+      <div>
+        <strong>Registro de vaga</strong>
+        <small>Simule o fluxo de criação para pacientes</small>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="/pages/index.html">Início</a>
+      <a href="/pages/registrar-vaga.html">Nova vaga</a>
+      <a href="/pages/vagas.html">Vagas públicas</a>
+      <a href="/pages/enfermeiro-dashboard.html">Painel enfermeiro</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <div>
+        <h1 class="page-title">Cadastrar oportunidade</h1>
+        <p class="page-subtitle">Apresente ao professor como o paciente descreve necessidades para o time de enfermagem.</p>
+      </div>
+      <div class="topbar-actions">
+        <span class="badge">Modo Demo</span>
+      </div>
+    </section>
+
+    <section class="card section">
+      <h3 class="section-title">Dados da vaga</h3>
+      <form class="stacked">
+        <div class="form-grid">
+          <div class="input-group">
+            <label for="titulo">Título da vaga</label>
+            <input id="titulo" placeholder="Ex.: Cuidador noturno para paciente cardíaco"/>
+          </div>
+          <div class="input-group">
+            <label for="cidade">Cidade / Bairro</label>
+            <input id="cidade" placeholder="Ex.: Guarulhos - SP"/>
+          </div>
+          <div class="input-group">
+            <label for="remuneracao">Remuneração estimada (R$)</label>
+            <input id="remuneracao" type="number" min="0" step="100" placeholder="5200,00"/>
+          </div>
+          <div class="input-group">
+            <label for="escala">Horário / Escala</label>
+            <input id="escala" placeholder="Plantão 12x36 — Noturno"/>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="contexto">Contexto do paciente</label>
+          <textarea id="contexto" rows="4" placeholder="Descreva o perfil, cuidados necessários e duração prevista."></textarea>
+        </div>
+        <div class="form-grid">
+          <div class="input-group">
+            <label for="status">Status</label>
+            <select id="status">
+              <option>Aberta</option>
+              <option>Em seleção</option>
+              <option>Fechada</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="prioridade">Prioridade</label>
+            <select id="prioridade">
+              <option>Normal</option>
+              <option>Urgente</option>
+              <option>Programada</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-actions">
+          <a class="btn btn-secondary" href="/pages/vagas.html">Cancelar</a>
+          <a class="btn btn-primary" href="/pages/vagas.html">Simular cadastro</a>
+        </div>
+      </form>
+    </section>
+
+    <section class="card section">
+      <h3 class="section-title">Checklist para apresentação</h3>
+      <ul class="simple-list">
+        <li>Mostre como a família preencheria o contexto clínico.</li>
+        <li>Explique os campos que impactam o match com profissionais.</li>
+        <li>Finalize clicando em “Simular cadastro” para navegar até a lista de vagas.</li>
+      </ul>
+    </section>
+  </main>
+  <script src="/scripts/chatbot.js"></script>
+</body>
+</html>
+

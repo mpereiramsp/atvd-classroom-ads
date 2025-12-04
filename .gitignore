@@ -1,0 +1,36 @@
+# Dependências
+node_modules/
+package-lock.json
+
+# Banco de dados local
+src/backend/database/*.db
+
+# Prisma
+.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# Variáveis de ambiente
+.env
+.env.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build e cache
+dist/
+build/
+.cache/
+*.tmp
+/src/generated/prisma

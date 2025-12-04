@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IT.Nursing - Acesso à plataforma</title>
+  <link rel="stylesheet" href="/styles/styles.css"/>
+  <link rel="stylesheet" href="/styles/indexStyle.css"/>
+</head>
+<body class="auth-body">
+  <header class="auth-hero">
+    <div class="hero-content">
+      <img src="/assets/logo3.png" alt="Logo IT.Nursing" class="logo hero-logo"/>
+      <div>
+        <p class="eyebrow">Home Care inteligente</p>
+        <h1>IT.Nursing</h1>
+        <p>Conectamos enfermeiros experientes a pacientes de Home Care com segurança, transparência e gestão 100% local.</p>
+        <div class="hero-highlights">
+          <div class="highlight-card">
+            <p class="highlight-title">Onboarding ágil</p>
+            <p>Fluxo guiado de cadastro para encantar avaliadores.</p>
+          </div>
+          <div class="highlight-card">
+            <p class="highlight-title">Visual premium</p>
+            <p>Layouts responsivos que valorizam o MVP.</p>
+          </div>
+          <div class="highlight-card">
+            <p class="highlight-title">Experiência fluida</p>
+            <p>Formulários claros para aumentar conversões.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-main">
+    <div class="auth-card card">
+      <div class="cta-banner">
+        <span class="badge-pill">Mais confiança no MVP</span>
+        <p>Reforce sua apresentação com uma experiência visual moderna e convidativa.</p>
+      </div>
+
+      <div class="pane-grid">
+        <section id="paneLogin" class="pane pane-login" aria-labelledby="tituloLogin">
+          <div>
+            <h2 id="tituloLogin">Entrar</h2>
+            <p class="pane-subtitle">Mostre como o acesso diário pode ser simples e elegante.</p>
+          </div>
+          <form id="formLogin" novalidate>
+            <div class="input-group">
+              <label for="emailLogin">E-mail</label>
+              <input id="emailLogin" type="email" autocomplete="username" required/>
+              <small class="error" id="erroEmailLogin"></small>
+            </div>
+            <div class="input-group">
+              <label for="senhaLogin">Senha</label>
+              <input id="senhaLogin" type="password" minlength="6" autocomplete="current-password" required/>
+              <small class="error" id="erroSenhaLogin"></small>
+            </div>
+            <button class="btn btn-primary" type="submit">Entrar</button>
+            <p class="form-note">Demonstre o fluxo completo explicando cada campo para o professor.</p>
+            <div class="admin-access">
+              <label for="adminToken">Acesso administrativo</label>
+              <div class="admin-actions">
+                <input id="adminToken" type="password" placeholder="Token único (ex.: 0781)"/>
+                <button class="btn btn-secondary" type="button" id="btnAdminAccess">Liberar painel</button>
+              </div>
+              <small class="error"></small>
+            </div>
+          </form>
+        </section>
+
+        <section id="paneCadastro" class="pane pane-cadastro" aria-labelledby="tituloCadastro">
+          <div>
+            <h2 id="tituloCadastro">Criar conta</h2>
+            <p class="pane-subtitle">Formulário pensado para destacar o processo de triagem.</p>
+          </div>
+          <form id="formCadastro" novalidate>
+            <div class="input-group">
+              <label>Desejo me cadastrar como</label>
+              <div class="role-options" role="radiogroup">
+                <label><input type="radio" name="roleCadastro" value="paciente" checked/> Paciente</label>
+                <label><input type="radio" name="roleCadastro" value="enfermeiro"/> Enfermeiro</label>
+                <label><input type="radio" name="roleCadastro" value="admin" disabled/> Admin (somente token)</label>
+              </div>
+            </div>
+            <div class="form-grid">
+              <div class="input-group">
+                <label for="nomeCadastro">Nome completo</label>
+                <input id="nomeCadastro" type="text" placeholder="Ex.: Ana Souza" required/>
+                <small class="error" id="erroNomeCadastro"></small>
+              </div>
+              <div class="input-group">
+                <label for="emailCadastro">E-mail</label>
+                <input id="emailCadastro" type="email" autocomplete="email" required/>
+                <small class="error" id="erroEmailCadastro"></small>
+              </div>
+              <div class="input-group">
+                <label for="cpfCadastro">CPF</label>
+                <input id="cpfCadastro" type="text" inputmode="numeric" maxlength="14" required/>
+                <small class="error" id="erroCPFCadastro"></small>
+              </div>
+              <div class="input-group only-enf" data-role="enfermeiro">
+                <label for="corenCadastro">COREN</label>
+                <input id="corenCadastro" type="text" placeholder="UF-123456"/>
+                <small class="error" id="erroCorenCadastro"></small>
+              </div>
+            </div>
+            <div class="form-grid">
+              <div class="input-group">
+                <label for="telefoneCadastro">Telefone (WhatsApp com DDI)</label>
+                <input id="telefoneCadastro" type="tel" placeholder="+55 11 99999-0000" required/>
+                <small class="error" id="erroTelefoneCadastro"></small>
+              </div>
+              <div class="input-group">
+                <label for="senhaCadastro">Senha</label>
+                <input id="senhaCadastro" type="password" minlength="6" autocomplete="new-password" required/>
+                <small class="error" id="erroSenhaCadastro"></small>
+              </div>
+              <div class="input-group">
+                <label for="confirmaCadastro">Confirmar senha</label>
+                <input id="confirmaCadastro" type="password" minlength="6" required/>
+                <small class="error" id="erroConfirmaCadastro"></small>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Destacar cadastro</button>
+            <p class="form-note">Explique como cada perfil (paciente, enfermeiro e admin) será avaliado.</p>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="auth-footer">
+    <p>© IT.Nursing — Plataforma piloto Home Care</p>
+  </footer>
+  <script src="/scripts/app.js"></script>
+  <script src="/scripts/chatbot.js"></script>
+</body>
+</html>
+

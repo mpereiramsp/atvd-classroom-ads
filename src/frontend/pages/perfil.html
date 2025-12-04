@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IT.Nursing — Meu perfil</title>
+  <link rel="stylesheet" href="/styles/styles.css"/>
+  <link rel="stylesheet" href="/styles/perfil.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="/assets/logo3.png" alt="Logo" class="logo"/>
+      <strong>Perfil</strong>
+    </div>
+    <nav class="nav-links">
+      <a href="/pages/db.html">Dashboard</a>
+      <a href="/pages/vagas.html">Vagas</a>
+      <a href="/pages/perfil.html">Perfil</a>
+    </nav>
+    <a class="btn btn-ghost" href="/pages/index.html">Voltar ao início</a>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <div>
+        <h1 class="page-title">Meu perfil</h1>
+        <p class="page-subtitle">Atualize suas informações pessoais e profissionais.</p>
+      </div>
+    </section>
+
+    <section class="responsive-grid">
+      <article class="card">
+        <h3>Identificação</h3>
+        <p id="roleBadge" class="badge"></p>
+        <p><strong>Nome:</strong> <span id="infoNome"></span></p>
+        <p><strong>E-mail:</strong> <span id="infoEmail"></span></p>
+        <p><strong>CPF:</strong> <span id="infoCPF"></span></p>
+        <p id="infoCorenWrapper"><strong>COREN:</strong> <span id="infoCoren"></span></p>
+      </article>
+      <article class="card">
+        <h3>Status de verificação</h3>
+        <div class="verifications">
+          <label>
+            <input type="checkbox" id="selfieOk"/>
+            Selfie validada
+          </label>
+          <label>
+            <input type="checkbox" id="docOk"/>
+            Documento validado
+          </label>
+        </div>
+        <button class="btn btn-primary" id="btnSalvarStatus">Atualizar status</button>
+      </article>
+    </section>
+
+    <section class="card section">
+      <h3 class="section-title">Informações de contato</h3>
+      <form id="formContato">
+        <div class="form-grid">
+          <div class="input-group">
+            <label for="telefone">Telefone</label>
+            <input id="telefone" placeholder="(11) 99999-0000"/>
+          </div>
+          <div class="input-group">
+            <label for="cidade">Cidade</label>
+            <input id="cidade" placeholder="Cidade - UF"/>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="bio">Sobre mim</label>
+          <textarea id="bio" placeholder="Conte um pouco sobre você..."></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Salvar dados</button>
+      </form>
+    </section>
+
+    <section id="secEnfermeiro" class="card section">
+      <h3 class="section-title">Perfil profissional</h3>
+      <form id="formEnfermeiro">
+        <div class="form-grid">
+          <div class="input-group">
+            <label for="corenPerfil">COREN</label>
+            <input id="corenPerfil" placeholder="UF-000000"/>
+          </div>
+          <div class="input-group">
+            <label for="areaAtuacao">Área de atuação</label>
+            <input id="areaAtuacao" placeholder="Ex.: UTI, cuidados paliativos"/>
+          </div>
+          <div class="input-group">
+            <label for="disponibilidade">Disponibilidade</label>
+            <input id="disponibilidade" placeholder="Ex.: 12x36, noites, plantões"/>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="experiencia">Experiência</label>
+          <textarea id="experiencia" placeholder="Resuma sua experiência"></textarea>
+        </div>
+        <div class="input-group">
+          <label for="skills">Especialidades (separe por vírgula)</label>
+          <input id="skills" placeholder="Curativos, Ventilação mecânica..."/>
+        </div>
+        <button class="btn btn-primary" type="submit">Salvar perfil profissional</button>
+      </form>
+    </section>
+
+    <section id="secPaciente" class="card section">
+      <h3 class="section-title">Informações do paciente</h3>
+      <form id="formPaciente">
+        <div class="input-group">
+          <label for="endereco">Endereço</label>
+          <input id="endereco" placeholder="Rua, número, bairro, cidade"/>
+        </div>
+        <div class="input-group">
+          <label for="necessidades">Necessidades principais</label>
+          <textarea id="necessidades" placeholder="Descreva os cuidados necessários."></textarea>
+        </div>
+        <div class="input-group">
+          <label for="preferenciaPeriodo">Período preferencial</label>
+          <input id="preferenciaPeriodo" placeholder="Ex.: Diurno, noturno, finais de semana"/>
+        </div>
+        <button class="btn btn-primary" type="submit">Salvar informações</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="/scripts/chatbot.js"></script>
+</body>
+</html>
+

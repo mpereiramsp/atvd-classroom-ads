@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IT.Nursing — Painel do Enfermeiro</title>
+  <link rel="stylesheet" href="/styles/styles.css"/>
+  <link rel="stylesheet" href="/styles/db.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="/assets/logo3.png" alt="Logo IT.Nursing" class="logo"/>
+      <div>
+        <strong>Painel do Enfermeiro</strong>
+        <small>Monitoramento rápido de vagas e candidaturas</small>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="/pages/index.html">Início</a>
+      <a href="/pages/enfermeiro-dashboard.html">Painel do enfermeiro</a>
+      <a href="/pages/registrar-vaga.html">Nova vaga</a>
+      <a href="/pages/admin-monitor.html">Admin</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <div>
+        <h1 class="page-title">Bem-vinda(o), enfermeiro!</h1>
+        <p class="page-subtitle">Use esta tela para apresentar rapidamente indicadores de desempenho e tarefas pendentes.</p>
+      </div>
+      <div class="topbar-actions">
+        <a class="btn btn-secondary" href="/pages/perfil.html">Atualizar perfil</a>
+        <a class="btn btn-primary" href="/pages/vagas.html">Explorar vagas</a>
+      </div>
+    </section>
+
+    <section class="card-grid">
+      <article class="card">
+        <h3>Disponibilidade</h3>
+        <p class="page-subtitle">Mostre ao professor como os status poderiam ser exibidos.</p>
+        <ul class="simple-list">
+          <li><strong>Próximo plantão:</strong> 12/12, 7h às 19h</li>
+          <li><strong>Preferência:</strong> Noturno, escala 12x36</li>
+          <li><strong>Habilidades:</strong> Curativos complexos, ventilação mecânica</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Resumo de candidaturas</h3>
+        <p class="page-subtitle">Use os cartões para explicar KPIs.</p>
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat-value">08</span>
+            <span class="stat-label">Candidaturas enviadas</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">03</span>
+            <span class="stat-label">Em análise</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">02</span>
+            <span class="stat-label">Entrevistas agendadas</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section card">
+      <div class="section-header">
+        <h3 class="section-title">Vagas recomendadas</h3>
+        <p class="section-subtitle">Demonstre como as oportunidades podem ser priorizadas.</p>
+      </div>
+      <div class="stacked">
+        <article class="vaga-card">
+          <div>
+            <h4>Cuidados pós-cirúrgicos — Zona Sul</h4>
+            <p>Paciente masculino, 72 anos. Plantão 12x36 — R$ 4.200.</p>
+          </div>
+          <div class="topbar-actions">
+            <span class="badge">Nova</span>
+            <a class="btn btn-primary" href="/pages/vagas.html">Candidatar</a>
+          </div>
+        </article>
+        <article class="vaga-card">
+          <div>
+            <h4>Monitoramento noturno cardiológico</h4>
+            <p>Paciente cardiópata, suporte medicamentoso. Plantão 22h–6h.</p>
+          </div>
+          <div class="topbar-actions">
+            <span class="badge badge-warn">Prazo curto</span>
+            <a class="btn btn-secondary" href="/pages/vagas.html">Ver detalhes</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section card">
+      <h3 class="section-title">Linha do tempo de atividades</h3>
+      <ul class="timeline">
+        <li>
+          <strong>Hoje, 08h30</strong>
+          <p>Feedback recebido para candidatura “Cuidados paliativos”.</p>
+        </li>
+        <li>
+          <strong>Ontem, 17h10</strong>
+          <p>Entrevista confirmada com família Costa.</p>
+        </li>
+        <li>
+          <strong>12/12</strong>
+          <p>Disponibilidade atualizada para turnos noturnos.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <script src="/scripts/chatbot.js"></script>
+</body>
+</html>
+

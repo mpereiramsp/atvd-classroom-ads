@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IT.Nursing — Vagas Home Care</title>
+  <link rel="stylesheet" href="/styles/styles.css"/>
+  <link rel="stylesheet" href="/styles/vagas.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="/assets/logo3.png" alt="Logo IT.Nursing" class="logo"/>
+      <strong>Vagas Home Care</strong>
+    </div>
+    <nav class="nav-links">
+      <a href="/pages/db.html">Dashboard</a>
+      <a href="/pages/vagas.html">Vagas</a>
+      <a href="/pages/perfil.html">Perfil</a>
+    </nav>
+    <a class="btn btn-ghost" href="/pages/index.html">Voltar ao início</a>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <div>
+        <h1 class="page-title">Vagas e candidaturas</h1>
+        <p class="page-subtitle">Controle total de vagas para pacientes e acompanhamento simples para enfermeiros.</p>
+      </div>
+      <div id="actionsPaciente">
+        <a class="btn btn-primary" href="#secPacienteForm">Nova vaga</a>
+      </div>
+    </section>
+
+    <section id="secPacienteForm" class="card section">
+      <div class="section-header">
+        <h3 class="section-title" id="tituloFormVaga">Nova vaga</h3>
+      </div>
+      <form id="formVaga">
+        <input type="hidden" id="vagaId"/>
+        <div class="form-grid">
+          <div class="input-group">
+            <label for="tituloVaga">Título</label>
+            <input id="tituloVaga" required placeholder="Ex.: Curativos pós-cirúrgicos"/>
+          </div>
+          <div class="input-group">
+            <label for="cidadeVaga">Cidade / Bairro</label>
+            <input id="cidadeVaga" required placeholder="Ex.: São Paulo - SP"/>
+          </div>
+          <div class="input-group">
+            <label for="remuneracaoVaga">Remuneração (R$)</label>
+            <input id="remuneracaoVaga" type="number" min="0" step="100" required/>
+          </div>
+          <div class="input-group">
+            <label for="horarioVaga">Horário / Escala</label>
+            <input id="horarioVaga" required placeholder="Ex.: Plantão 12x36 - Noturno"/>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="descricaoVaga">Descrição detalhada</label>
+          <textarea id="descricaoVaga" required placeholder="Contextualize o paciente, cuidados necessários e tempo estimado."></textarea>
+        </div>
+        <div class="form-grid">
+          <div class="input-group">
+            <label for="statusVaga">Status</label>
+            <select id="statusVaga">
+              <option value="aberta">Aberta</option>
+              <option value="em seleção">Em seleção</option>
+              <option value="fechada">Fechada</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" id="cancelarVaga">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar vaga</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="secMinhasVagas" class="section">
+      <h3 class="section-title">Minhas vagas</h3>
+      <div id="listaMinhasVagas" class="stacked"></div>
+      <p id="semMinhasVagas" class="empty-state">Você ainda não cadastrou vagas.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h3 class="section-title">Vagas disponíveis</h3>
+        <div>
+          <select id="filtroStatus" class="filter-select">
+            <option value="todas">Todas</option>
+            <option value="aberta">Apenas abertas</option>
+            <option value="em seleção">Em seleção</option>
+          </select>
+        </div>
+      </div>
+      <div id="listaPublica" class="stacked"></div>
+      <p id="semVagasPublicas" class="empty-state">Navegue pelas vagas cadastradas pelos pacientes.</p>
+    </section>
+  </main>
+
+  <section class="card section">
+    <h3 class="section-title">Candidaturas</h3>
+    <p>Use este formulário como referência visual para a apresentação do MVP; todas as interações são ilustrativas.</p>
+  </section>
+  <script src="chatbot.js"></script>`r`n</body>
+</html>
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IT.Nursing — Dashboard</title>
+  <link rel="stylesheet" href="/styles/styles.css"/>
+  <link rel="stylesheet" href="/styles/db.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="/assets/logo3.png" alt="Logo IT.Nursing" class="logo"/>
+      <div>
+        <strong>IT.Nursing</strong>
+        <small>Home Care conectado</small>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="/pages/db.html">Dashboard</a>
+      <a href="/pages/vagas.html">Vagas</a>
+      <a href="/pages/perfil.html">Perfil</a>
+    </nav>
+    <a class="btn btn-ghost" href="/pages/index.html">Voltar ao início</a>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <div>
+        <h1 class="page-title">Painel principal</h1>
+        <p class="page-subtitle" id="welcomeMsg">Operando a plataforma Home Care.</p>
+      </div>
+      <div>
+        <a class="btn btn-primary" href="/pages/vagas.html">Ir para vagas</a>
+      </div>
+    </section>
+
+    <section class="card-grid" id="dashboardCards"></section>
+
+    <section class="section">
+      <h3 class="section-title">Últimas vagas publicadas</h3>
+      <div id="listaVagas" class="responsive-grid"></div>
+      <p id="semVagas" class="empty-state">Nenhuma vaga cadastrada ainda.</p>
+    </section>
+
+    <section id="adminResumo" class="section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Resumo administrativo</h3>
+          <p class="section-subtitle">Indicadores consolidados apenas para administradores.</p>
+        </div>
+      </div>
+      <div id="adminCards" class="card-grid admin-cards"></div>
+      <div class="responsive-grid admin-grid">
+        <article class="card card-chart">
+          <h4>Status das vagas</h4>
+          <canvas id="chartVagas" width="420" height="240"></canvas>
+        </article>
+        <article class="card">
+          <h4>Vagas por status</h4>
+          <ul id="listaResumoVagas" class="simple-list"></ul>
+        </article>
+        <article class="card">
+          <h4>Pipeline de profissionais</h4>
+          <ul id="listaPipeline" class="simple-list"></ul>
+        </article>
+      </div>
+      <article class="card section">
+        <h4 class="section-title">Linha do tempo</h4>
+        <ul id="timeline" class="timeline"></ul>
+      </article>
+    </section>
+  </main>
+
+  <script src="/scripts/chatbot.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,141 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  ENFERMEIRO
+  PACIENTE
+}
+
+enum StatusEnfermeiro {
+  AVALIACAO
+  APROVADO
+  REJEITADO
+  SUSPENSO
+}
+
+enum StatusVaga {
+  ABERTA
+  EM_SELECAO
+  FECHADA
+}
+
+enum StatusCandidatura {
+  PENDENTE
+  ACEITA
+  RECUSADA
+  CANCELADA
+}
+
+model User {
+  id                  String    @id @default(uuid())
+  nome                String
+  email               String    @unique
+  cpf                 String
+  role                Role
+  senhaHash           String    @map("senha_hash")
+  telefone            String?
+  telefoneConfirmado  Boolean   @default(false) @map("telefone_confirmado")
+  cidade              String?
+  bio                 String?   @db.Text
+  selfieOk            Boolean   @default(false) @map("selfie_ok")
+  docOk               Boolean   @default(false) @map("doc_ok")
+  createdAt           DateTime  @default(now()) @map("created_at")
+  updatedAt           DateTime  @updatedAt @map("updated_at")
+
+  // Relações
+  enfermeiro          Enfermeiro?
+  paciente            Paciente?
+  phoneVerification   PhoneVerification?
+
+  @@map("users")
+}
+
+model Enfermeiro {
+  id                String              @id @default(uuid())
+  userId            String              @unique @map("user_id")
+  coren             String?
+  areaAtuacao       String?             @map("area_atuacao")
+  experiencia       String?             @db.Text
+  disponibilidade   String?
+  status            StatusEnfermeiro    @default(AVALIACAO)
+  rating            Decimal             @default(0) @db.Decimal(3, 1)
+  skills            String?             @db.Text
+
+  // Relações
+  user              User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  candidaturas      Candidatura[]
+
+  @@map("enfermeiros")
+}
+
+model Paciente {
+  id                  String    @id @default(uuid())
+  userId              String    @unique @map("user_id")
+  endereco            String?   @db.Text
+  necessidades        String?   @db.Text
+  preferenciaPeriodo  String?   @map("preferencia_periodo")
+  ativo               Boolean   @default(true)
+
+  // Relações
+  user                User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  vagas               Vaga[]
+
+  @@map("pacientes")
+}
+
+model Vaga {
+  id            String          @id @default(uuid())
+  pacienteId    String          @map("paciente_id")
+  titulo        String
+  descricao     String          @db.Text
+  status        StatusVaga
+  remuneracao   Decimal         @db.Decimal(10, 2)
+  horario       String
+  cidade        String
+  criadoEm      DateTime        @default(now()) @map("criado_em")
+  atualizadoEm  DateTime        @updatedAt @map("atualizado_em")
+
+  // Relações
+  paciente      Paciente        @relation(fields: [pacienteId], references: [id], onDelete: Cascade)
+  candidaturas  Candidatura[]
+
+  @@map("vagas")
+}
+
+model Candidatura {
+  id            String              @id @default(uuid())
+  vagaId        String              @map("vaga_id")
+  enfermeiroId  String              @map("enfermeiro_id")
+  mensagem      String?             @db.Text
+  data          DateTime            @default(now())
+  status        StatusCandidatura
+
+  // Relações
+  vaga          Vaga                @relation(fields: [vagaId], references: [id], onDelete: Cascade)
+  enfermeiro    Enfermeiro          @relation(fields: [enfermeiroId], references: [id], onDelete: Cascade)
+
+  @@map("candidaturas")
+}
+
+model PhoneVerification {
+  id          String    @id @default(uuid())
+  userId      String    @unique @map("user_id")
+  codeHash    String    @map("code_hash")
+  expiresAt   DateTime  @map("expires_at")
+  attempts    Int       @default(0)
+
+  // Relações
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("phone_verifications")
+}
