@@ -13,7 +13,7 @@ Integrantes:
 ## 🚀 Setup Rápido
 
 ### 1. Pré-requisitos
-- **Node.js** (v18+): https://nodejs.org
+- **Node.js** (v24): https://nodejs.org
 - **PostgreSQL** (v14+): https://www.postgresql.org/download/windows/
 
 ### 2. Instalar Dependências
